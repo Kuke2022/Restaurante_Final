@@ -12,9 +12,12 @@ export class UI {
 
   getLayout() {
     return `
-      <div class="min-h-screen bg-gray-100">
+      <div class="min-h-screen bg-gray-100 relative" style="background-image: url('https://stronglify-1.s3.sa-east-1.amazonaws.com/vajillascorona/Que-es-un-restaurante-de-autor.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <!-- Overlay para oscurecer ligeramente y mejorar legibilidad -->
+        <div class="absolute inset-0 bg-black opacity-30 pointer-events-none"></div>
+
         <!-- Header -->
-        <header class="bg-white shadow">
+        <header class="bg-white shadow relative z-10">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
               <div class="flex">
@@ -30,7 +33,7 @@ export class UI {
         </header>
 
         <!-- Main Content -->
-        <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 relative z-10">
           <div id="content" class="px-4 py-6 sm:px-0">
             ${this.getCurrentView()}
           </div>
